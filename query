@@ -1,0 +1,42 @@
+create table sound (
+	id int auto_increment primary key,
+	name varchar(50),
+    czas date,
+    autor varchar(20),
+    opis varchar(150),
+    base_64 varchar(200)
+);
+create table image (
+	id int auto_increment primary key,
+	name varchar(50),
+    czas date,
+    autor varchar(20),
+    opis varchar(150),
+    base_64 varchar(500)
+    
+);
+create table wpis(
+	id int auto_increment primary key,
+	name varchar(50),
+    czas date,
+    autor varchar(20),   
+    wpis varchar(500)
+);
+create table chat (
+	id int auto_increment primary key,
+	uzytkownik varchar(50),
+    czas date,
+    tresc varchar(50),
+    kolor varchar(10),
+    direct_msg int(10)    
+);
+create table uzytkownik (
+  username varchar(50),
+  haslo varchar(150)
+);
+
+create table friends (
+	accepted bit(1),
+    FOREIGN KEY (uzytkownik) REFERENCES Persons(username),
+    FOREIGN KEY (uzytkownik) REFERENCES Persons(username)
+)
